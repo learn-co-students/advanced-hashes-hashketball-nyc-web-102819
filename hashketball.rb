@@ -189,5 +189,124 @@ def player_numbers (team_name)
 end
 
 def player_stats (player_name)
+  teams = game_hash
+  stats = teams.reduce({}) do
+    |memo, (team, details)|
+    details[:players].each do
+      |player|
+      if player[:player_name] == player_name
+        memo = memo.merge(player)
+        memo.delete(:player_name)
+      end
+    end
+    memo
+  end
+  stats
+end
+
+def big_shoe_rebounds
+  teams = game_hash
+  shoe = 0
+  big_player = "" 
+  rebound = 0
+  teams.each do
+    |(team, details)|
+    details[:players].each do
+      |player|
+      if player[:shoe] > shoe
+        shoe = player[:shoe]
+        big_player = player[:player_name]
+      end
+    end
+  end
+  teams.each do
+    |(team, details)|
+    details[:players].each do
+      |player|
+      if player[:player_name] == big_player
+        rebound = player[:rebounds]
+      end
+    end
+  end
+  rebound
+end
+
+def most_points_scored
+  teams = game_hash
+  score = 0
+  big_player = "" 
+  teams.each do
+    |(team, details)|
+    details[:players].each do
+      |player|
+      if player[:points] > score
+        score = player[:points]
+        big_player = player[:player_name]
+      end
+    end
+  end
+  big_player
+end
+
+def winning_team
+  teams = game_hash
+  team_score = teams.reduce({}) do
+    |memo, (team, details)|
+    details[:players].each do
+        |(player)|
+        if !memo[details[:team_name]]
+          memo[details[:team_name]] = 0
+        end
+        memo[details[:team_name]] += player[:points]
+      end
+    memo
+  end
   
+  high = 0
+  winner = ""
+  team_score.each do
+    |(team, score)|
+    if score > high
+      high = score
+      winner = team
+    end
+  end
+  winner
+end     
+
+def player_with_longest_name
+  teams = game_hash
+  name_length = 0
+  big_player = "" 
+  teams.each do
+    |(team, details)|
+    details[:players].each do
+      |player|
+      if player[:player_name].length > name_length
+        name_length = player[:player_name].length
+        big_player = player[:player_name]
+      end
+    end
+  end
+  big_player
+end
+
+def long_name_steals_a_ton?
+  def most_steals
+    teams = game_hash
+    steals = 0
+    big_player = "" 
+    teams.each do
+      |(team, details)|
+      details[:players].each do
+        |player|
+        if player[:steals] > steals
+          steals = player[:steals]
+          big_player = player[:player_name]
+        end
+      end
+    end
+    big_player
+  end
+  most_steals == player_with_longest_name
 end
