@@ -150,7 +150,7 @@ def shoe_size(name)
     end
     shoe
 end
-
+ 
 def team_colors(team_name)
   teams = game_hash
   team_color = []
@@ -163,6 +163,31 @@ def team_colors(team_name)
     team_color = team_color.flatten
   end
     
-  def team_names
-    
+def team_names
+  teams = game_hash
+  name = teams.reduce([]) do
+    |memo, (team, details)|
+    memo << details[:team_name]
+    memo
   end
+  name
+end
+
+def player_numbers (team_name)
+  teams = game_hash
+  numbers = teams.reduce([]) do
+    |memo, (team, details)|
+    if details[:team_name] == team_name
+      details[:players].each do
+        |(player)|
+        memo << player[:number]
+      end
+    end
+    memo
+  end
+  numbers
+end
+
+def player_stats (player_name)
+  
+end
