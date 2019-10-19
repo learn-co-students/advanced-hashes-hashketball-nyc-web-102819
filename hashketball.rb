@@ -100,8 +100,69 @@ def game_hash
           :blocks => 1,
           :slam_dunks => 0,
         },
+        { :player_name => "Kemba Walker",
+          :number => 33,
+          :shoe => 15,
+          :points => 6,
+          :rebounds => 12,
+          :assists => 12,
+          :steals => 7,
+          :blocks => 5,
+          :slam_dunks => 12,
+        },
       ]
     }
   }
-end 
+end         #FUck this!
 
+def num_points_scored (name)
+  teams = game_hash
+  score = 0
+  teams.each do
+    |(team, details)|
+    details[:players].each do
+      |player|
+      if player[:player_name] == name
+        score += player[:points]
+      end
+    end
+  end
+    if score == 0
+      score = "Sorry, that player didn't score."
+    end
+    score
+end
+
+def shoe_size(name)
+  teams = game_hash
+  shoe = 0
+  teams.each do
+    |(team, details)|
+    details[:players].each do
+      |player|
+      if player[:player_name] == name
+        shoe += player[:shoe]
+      end
+    end
+  end
+    if shoe == 0
+      score = "Sorry, that player doesn't wear shoes."
+    end
+    shoe
+end
+
+def team_colors(team_name)
+  teams = game_hash
+  team_color = []
+  teams.each do
+    |(team, details)|
+    if details[:team_name] == team_name
+      team_color << details[:colors]
+    end 
+  end
+    team_color = team_color.flatten
+  end
+    
+  def team_names
+    
+  end
