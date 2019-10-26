@@ -1,8 +1,8 @@
-require 'pry'
 
- # HASKETBALL
 
-#RAW DATA
+# HASKETBALL
+
+## RAW DATA
 
 data = {
   home: {
@@ -119,12 +119,4 @@ data = {
   }
 }
 
-#CODE
-
-def game_hash ()
-
-game = data[home:,away:]
-
-return game
-
-end
+pp data
