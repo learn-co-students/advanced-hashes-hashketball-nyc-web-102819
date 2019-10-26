@@ -158,7 +158,7 @@ def player_stats(input)
       if key == :players
         value.each do |player|
           if input == player[:player_name]
-            player.delete(:player_name) # having player name inside the hash was a bad idea!
+            player.delete(:player_name)
             return player
           end
         end
@@ -179,4 +179,18 @@ def big_shoe_rebounds
     end
   end
   return rebounds
+end
+
+##now for best guess bonus sections :(
+
+def most_points_scored
+  hueg_score = 0
+  game_hash.eacb do |team, team_info|
+    team_info[:players].each do |player|
+      if player[:points] > hueg_score
+        hueg_score = player[]:points]
+          end
+        end
+      end
+  return hueg_score
 end
