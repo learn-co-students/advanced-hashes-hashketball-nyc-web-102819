@@ -189,13 +189,75 @@ def player_stats(name)
   new_hash
 end
 
+def all_players
+  game_hash[:home][:players].merge(game_hash[:away][:players])
+end
+
 def big_shoe_rebounds
-  biggest_shoe = 0
-  num_rebounds = 0
+  shoes = 0
+  rebounds = 0
   game_hash.each do |place, team|
     team[:players].each do |player|
-      biggest_shoes = player[:shoe] && num_rebounds = player[:rebounds] if player[:shoe] > biggest_shoes
+      if player[:shoe] > shoes
+        shoes = player[:shoe]
+        rebounds = player[:rebounds]
+      end
     end
   end
-  num_rebounds
+  rebounds
+end
+
+def most_points_scored
+  point = 0
+  name = nil
+  game_hash.each do |place, team|
+    team[:players].each do |player|
+      if player[:points] > point
+        point = player[:points]
+        name = player[:player_name]
+      end
+    end
+  end
+  name
+end
+
+def winning_team
+  winner = nil
+  total = 0
+  game_hash.each do |place, team|
+    team.each do |attribute, data|
+      next unless attribute == :players
+      data.each do |player|
+        if team[:team_name] && player[:points] > total
+          total += player[:points]
+          winner = team[:team_name]
+        end  
+      end
+    end
+  end  
+  winner
+end
+
+def player_with_longest_name
+  name_length = 0
+  name = ""
+  game_hash.each do |place, team|
+    team[:players].each do |player|
+      if player[:player_name].length > name_length
+        name_length = player[:player_name].length
+        name = player[:player_name]
+      end
+    end
+  end
+  name
+end
+
+def long_name_steals_a_ton?
+  name_length = 0
+  steal = 0
+  game_hash.each do |place, team|
+    team[:players].each do |player|
+      return true if player[:player_name].length > name_length && player[:steals] > steal
+    end
+  end
 end
