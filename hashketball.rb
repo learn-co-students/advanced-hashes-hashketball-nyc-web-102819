@@ -1,13 +1,15 @@
- # HASKETBALL #
+require 'pry'
 
-### RAW DATA ###
+ # HASKETBALL
 
-game_hash: {
+#RAW DATA
+
+data = {
   home: {
-    team_name: {"Brooklyn Nets"},
-    colors: {["Black","White"]},
+    :team_name => "Brooklyn Nets",
+    colors: ["Black","White"],
     players: [
-      :alan_stats {
+      alan_stats: {
         :number => 0,
         :shoe => 16,
         :points => 22,
@@ -17,7 +19,7 @@ game_hash: {
         :blocks => 1,
         :slam_dunks => 1
       },
-      :reggie_stats {
+      reggie_stats: {
         :number => 30,
         :shoe => 14,
         :points => 12,
@@ -27,7 +29,7 @@ game_hash: {
         :blocks => 12,
         :slam_dunks => 7
       },
-      :brook_stats {
+      brook_stats: {
         :number => 11,
         :shoe => 17,
         :points => 17,
@@ -37,7 +39,7 @@ game_hash: {
         :blocks => 1,
         :slam_dunks => 15
       },
-      :mason_stats {
+      mason_stats: {
         :number => 1,
         :shoe => 19,
         :points => 26,
@@ -47,7 +49,7 @@ game_hash: {
         :blocks => 8,
         :slam_dunks => 5
       },
-      :jason_stats {
+      jason_stats: {
         :number => 31,
         :shoe => 15,
         :points => 19,
@@ -58,12 +60,12 @@ game_hash: {
         :slam_dunks => 1
       }
     ]
-  }
+  },
   away: {
-    team_name: {"Charlotte Hornets"},
-    colors: {["Turquoise","Purple"]},
+    :team_name => "Charlotte Hornets",
+    colors: ["Turquoise","Purple"],
     players: [
-      :jeff_stats {
+      jeff_stats: {
         :number => 4,
         :shoe => 18,
         :points => 10,
@@ -73,7 +75,7 @@ game_hash: {
         :blocks => 7,
         :slam_dunks => 2
       },
-      :bismak_stats {
+      bismak_stats: {
         :number => 0,
         :shoe => 16,
         :points => 12,
@@ -83,7 +85,7 @@ game_hash: {
         :blocks => 15,
         :slam_dunks => 10
       },
-      :desagna_stats {
+      desagna_stats: {
         :number => 2,
         :shoe => 14,
         :points => 24,
@@ -93,7 +95,7 @@ game_hash: {
         :blocks => 5,
         :slam_dunks => 5
       },
-      :ben_stats {
+      ben_stats: {
         :number => 8,
         :shoe => 15,
         :points => 33,
@@ -103,7 +105,7 @@ game_hash: {
         :blocks => 1,
         :slam_dunks => 0
       },
-      :kemba_stats {
+      kemba_stats: {
         :number => 33,
         :shoe => 15,
         :points => 6,
@@ -117,4 +119,12 @@ game_hash: {
   }
 }
 
-### METHODS ###
+#CODE
+
+def game_hash ()
+
+game = data[home:,away:]
+
+return game
+
+end
