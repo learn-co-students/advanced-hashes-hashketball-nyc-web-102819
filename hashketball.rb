@@ -121,10 +121,12 @@ data = {
 
 #CODE
 
-def game_hash ()
+def game_hash()
 
-game = data[home:,away:]
+game_data_home = data[home:]
+game_data_away = data[away:]
 
-return game
+return game_data_home
+return game_data_away
 
 end
