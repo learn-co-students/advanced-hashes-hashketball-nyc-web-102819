@@ -189,10 +189,6 @@ def player_stats(name)
   new_hash
 end
 
-def all_players
-  game_hash[:home][:players].merge(game_hash[:away][:players])
-end
-
 def big_shoe_rebounds
   shoes = 0
   rebounds = 0
