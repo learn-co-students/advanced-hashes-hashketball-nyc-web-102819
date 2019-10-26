@@ -9,7 +9,7 @@ data = {
     :team_name => "Brooklyn Nets",
     colors: ["Black","White"],
     players: [
-      alan_stats: {
+      alan_andesrson: {
         :number => 0,
         :shoe => 16,
         :points => 22,
@@ -19,7 +19,7 @@ data = {
         :blocks => 1,
         :slam_dunks => 1
       },
-      reggie_stats: {
+      reggie_evans: {
         :number => 30,
         :shoe => 14,
         :points => 12,
@@ -29,7 +29,7 @@ data = {
         :blocks => 12,
         :slam_dunks => 7
       },
-      brook_stats: {
+      brook_lopez: {
         :number => 11,
         :shoe => 17,
         :points => 17,
@@ -39,7 +39,7 @@ data = {
         :blocks => 1,
         :slam_dunks => 15
       },
-      mason_stats: {
+      mason_plumlee: {
         :number => 1,
         :shoe => 19,
         :points => 26,
@@ -49,7 +49,7 @@ data = {
         :blocks => 8,
         :slam_dunks => 5
       },
-      jason_stats: {
+      jason_terry: {
         :number => 31,
         :shoe => 15,
         :points => 19,
@@ -65,7 +65,7 @@ data = {
     :team_name => "Charlotte Hornets",
     colors: ["Turquoise","Purple"],
     players: [
-      jeff_stats: {
+      jeff_adrien: {
         :number => 4,
         :shoe => 18,
         :points => 10,
@@ -75,7 +75,7 @@ data = {
         :blocks => 7,
         :slam_dunks => 2
       },
-      bismak_stats: {
+      bismak_biyombo: {
         :number => 0,
         :shoe => 16,
         :points => 12,
@@ -85,7 +85,7 @@ data = {
         :blocks => 15,
         :slam_dunks => 10
       },
-      desagna_stats: {
+      desagna_diop: {
         :number => 2,
         :shoe => 14,
         :points => 24,
@@ -95,7 +95,7 @@ data = {
         :blocks => 5,
         :slam_dunks => 5
       },
-      ben_stats: {
+      ben_gordon: {
         :number => 8,
         :shoe => 15,
         :points => 33,
@@ -105,7 +105,7 @@ data = {
         :blocks => 1,
         :slam_dunks => 0
       },
-      kemba_stats: {
+      kemba_walker: {
         :number => 33,
         :shoe => 15,
         :points => 6,
